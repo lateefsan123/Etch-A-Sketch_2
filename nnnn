@@ -1,0 +1,20 @@
+const select = document.querySelector(".select")
+
+
+select.addEventListener("click", function() {
+    let board = document.querySelector(".board")
+
+    size = prompt("What size do you want the board to be?")
+    whole = size * size
+    board.innerHTML = "";
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    
+    for(let i = 0; i < whole; i++) {
+        let div = document.createElement("div")
+        div.style.backgroundColor = "yellow";
+        board.insertAdjacentElement("beforeend", div)
+
+    }
+
+})
